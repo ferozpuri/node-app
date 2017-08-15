@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block lazyJS %}
+<script  src="/javascripts/socketController.js"></script>
+{% endblock %}
+{% block content %}
+<div class="col-sm-8" ng-controller="SocketController as socket">
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>{{ title }}</legend>
+            <div class="form-group">
+                <label for="textArea" class="col-lg-2 control-label">Message</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" id="textArea" ng-model="socket.message"></textarea>
+                    <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-primary" ng-click="socket.sendMessage()">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

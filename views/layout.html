@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+        {% block lazyStylesheet %}{% endblock %}
+        <link rel="stylesheet" href="/stylesheets/style.css"/>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+        <script src="/javascripts/angular.min.js"></script>
+        <script src="/javascripts/app.js"></script>
+        {% block lazyJS %}{% endblock %}
+        
+    </head>
+    <body ng-app="scoketApp">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!--/Client side socket lib/-->
+        
+    </body>
+</html>
